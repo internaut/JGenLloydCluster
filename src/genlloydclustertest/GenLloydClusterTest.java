@@ -29,7 +29,7 @@ public class GenLloydClusterTest {
         points.add(arrayOf(1.0, -3.0, -2.0));
         points.add(arrayOf(1.0, -2.5, -4.5));
 
-        GenLloyd gl = new GenLloyd(points.toArray(new double[points.size()][2]));
+        GenLloyd gl = new GenLloyd(points.toArray(new double[points.size()][3]));
         
         gl.calcClusters(4);
         

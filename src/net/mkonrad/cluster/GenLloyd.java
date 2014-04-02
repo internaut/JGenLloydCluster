@@ -23,7 +23,9 @@ public class GenLloyd {
 
     /**
      * Create Generalized Lloyd object with an array of sample points
-     * @param samplePoints 2-dimensional array of N sample points where each point has the same dimension K
+     * @param samplePoints 2-dim. array[N][K] of N sample points where each
+     * point has the same dimension K. You can also pass 'null' and then set
+     * the sample points later using setSamplePoints()
      */
     public GenLloyd(double[][] samplePoints) {
         this.setSamplePoints(samplePoints);
@@ -47,7 +49,8 @@ public class GenLloyd {
 
     /**
      * Set array of sample points
-     * @param samplePoints 2-dimensional array of N sample points where each point has the same dimension K
+     * @param samplePoints 2-dim. array[N][K] of N sample points where each
+     * point has the same dimension K
      */
     public void setSamplePoints(double[][] samplePoints) {
         if (samplePoints.length > 0) {
@@ -58,16 +61,18 @@ public class GenLloyd {
 
     /**
      * Get array of sample points
-     * @return samplePoints 2-dimensional array of N sample points where each point has the same dimension K
+     * @return 2-dim. array[N][K] of N sample points where each
+     * point has the same dimension K
      */
     public double[][] getSamplePoints() {
         return samplePoints;
     }
 
     /**
-     * Get calculated cluster points. <numClusters> cluster points will be calculated and returned
-     * @param numClusters number of clusters that should be calculated. This should be a power of 2.
-     * @return calculated cluster points
+     * Get calculated cluster points AFTER they have been calculated using
+     * calcClusters();
+     * @return calculated cluster points. 2-dim array[N][K] with N clusters of
+     * dimension K
      */
     public double[][] getClusterPoints() {
         return clusterPoints;
